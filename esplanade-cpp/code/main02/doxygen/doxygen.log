@@ -1,0 +1,10 @@
+/home/bruno/Bureau/PROGRAMMATION/C++/20151028-esplanade/esplanade/code/main01/src/Atome.cpp:8: warning: documented symbol `rad::Atome::Initialise' was not declared or defined.
+/home/bruno/Bureau/PROGRAMMATION/C++/20151028-esplanade/esplanade/code/main01/src/Atome.cpp:18: warning: documented symbol `rad::Atome::Atome' was not declared or defined.
+/home/bruno/Bureau/PROGRAMMATION/C++/20151028-esplanade/esplanade/code/main01/src/Atome.cpp:25: warning: documented symbol `rad::Atome::~Atome' was not declared or defined.
+/home/bruno/Bureau/PROGRAMMATION/C++/20151028-esplanade/esplanade/code/main01/src/Isotope.cpp:7: warning: documented symbol `rad::Isotope::Initialise' was not declared or defined.
+/home/bruno/Bureau/PROGRAMMATION/C++/20151028-esplanade/esplanade/code/main01/src/Isotope.cpp:21: warning: documented symbol `rad::Isotope::Isotope' was not declared or defined.
+/home/bruno/Bureau/PROGRAMMATION/C++/20151028-esplanade/esplanade/code/main01/src/Isotope.cpp:35: warning: documented symbol `rad::Isotope::~Isotope' was not declared or defined.
+/home/bruno/Bureau/PROGRAMMATION/C++/20151028-esplanade/esplanade/code/main01/src/Mode2Desintegration.cpp:8: warning: documented symbol `rad::Mode2Desintegration::Initialise' was not declared or defined.
+/home/bruno/Bureau/PROGRAMMATION/C++/20151028-esplanade/esplanade/code/main01/src/Mode2Desintegration.cpp:23: warning: documented symbol `rad::Mode2Desintegration::Mode2Desintegration' was not declared or defined.
+/home/bruno/Bureau/PROGRAMMATION/C++/20151028-esplanade/esplanade/code/main01/src/Mode2Desintegration.cpp:37: warning: documented symbol `rad::Mode2Desintegration::~Mode2Desintegration' was not declared or defined.
+/home/bruno/Bureau/PROGRAMMATION/C++/20151028-esplanade/esplanade/code/main01/include/Ecran.h:52: warning: argument 'Dessiner' of command @param is not found in the argument list of app::Ecran::dessiner()=0

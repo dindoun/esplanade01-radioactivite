@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="esplanade radioactive" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="rad\;" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/esplanade radioactive" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+					<Add directory="include" />
+					<Add directory="gui/include" />
+					<Add directory="racine/include" />
+					<Add directory="gui/gadgets/include" />
+				</Compiler>
+				<Linker>
+					<Add library="sfml-graphics-s-d" />
+					<Add library="sfml-window-s-d" />
+					<Add library="sfml-system-s-d" />
+					<Add library="sfml-audio-s-d" />
+					<Add library="openal32" />
+					<Add library="jpeg" />
+					<Add library="freetype" />
+					<Add library="ws2_32" />
+					<Add library="gdi32" />
+					<Add library="opengl32" />
+					<Add library="winmm" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/esplanade radioactive" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-std=c++11" />
+					<Add directory="include" />
+					<Add directory="gui/include" />
+					<Add directory="racine/include" />
+					<Add directory="gui/gadgets/include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="sfml-graphics-s" />
+					<Add library="sfml-window-s" />
+					<Add library="sfml-system-s" />
+					<Add library="sfml-audio-s" />
+					<Add library="openal32" />
+					<Add library="jpeg" />
+					<Add library="freetype" />
+					<Add library="ws2_32" />
+					<Add library="gdi32" />
+					<Add library="opengl32" />
+					<Add library="winmm" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=c++11" />
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add option="-DSFML_STATIC" />
+			<Add directory="L:/programes/SFML-2.3.2/include" />
+		</Compiler>
+		<Linker>
+			<Add directory="L:/programes/SFML-2.3.2/lib" />
+		</Linker>
+		<Unit filename="include/Application.h" />
+		<Unit filename="include/Atome.h">
+			<Option virtualFolder="rad/" />
+		</Unit>
+		<Unit filename="include/Config.h" />
+		<Unit filename="include/Ecran.h" />
+		<Unit filename="include/Esplanade.h">
+			<Option virtualFolder="rad/" />
+		</Unit>
+		<Unit filename="include/Gestion_ecrans.h" />
+		<Unit filename="include/Mode2Desintegration.h">
+			<Option virtualFolder="rad/" />
+		</Unit>
+		<Unit filename="include/ResourceMgr.h" />
+		<Unit filename="include/ResourceMgr.inl" />
+		<Unit filename="include/dalle.h">
+			<Option virtualFolder="rad/" />
+		</Unit>
+		<Unit filename="include/ecrans/EcranPrincipal.h" />
+		<Unit filename="include/materiau.h">
+			<Option virtualFolder="rad/" />
+		</Unit>
+		<Unit filename="main.cpp" />
+		<Unit filename="media/img/nuage.jpg" />
+		<Unit filename="media/polices/arial.ttf" />
+		<Unit filename="media/polices/bgothl.ttf" />
+		<Unit filename="media/polices/consola.ttf" />
+		<Unit filename="media/polices/consolab.ttf" />
+		<Unit filename="media/polices/consolai.ttf" />
+		<Unit filename="media/polices/consolaz.ttf" />
+		<Unit filename="media/polices/webdings.ttf" />
+		<Unit filename="media/polices/wingding.ttf" />
+		<Unit filename="src/Application.cpp" />
+		<Unit filename="src/Atome.cpp">
+			<Option virtualFolder="rad/" />
+		</Unit>
+		<Unit filename="src/Config.cpp" />
+		<Unit filename="src/Ecran.cpp" />
+		<Unit filename="src/Esplanade.cpp">
+			<Option virtualFolder="rad/" />
+		</Unit>
+		<Unit filename="src/Gestion_ecrans.cpp" />
+		<Unit filename="src/Mode2Desintegration.cpp">
+			<Option virtualFolder="rad/" />
+		</Unit>
+		<Unit filename="src/dalle.cpp">
+			<Option virtualFolder="rad/" />
+		</Unit>
+		<Unit filename="src/ecrans/EcranPrincipal.cpp" />
+		<Unit filename="src/materiau.cpp">
+			<Option virtualFolder="rad/" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<DoxyBlocks>
+				<comment_style block="5" line="2" />
+				<doxyfile_project output_directory="docs" output_language="French" />
+				<doxyfile_build extract_all="1" extract_private="1" extract_static="1" />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot class_diagrams="1" have_dot="1" />
+				<general />
+			</DoxyBlocks>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
