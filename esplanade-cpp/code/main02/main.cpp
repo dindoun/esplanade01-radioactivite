@@ -1,4 +1,15 @@
+#include <ModeDeDesintegration.h>
+using namespace rad;
+int main()
+{   //  creation de l'application.
+    ModeDeDesintegration mo;
+    mo.Initialise();
+    printf("%f ", mo.m_demi_vie);
+    return 0;
+    }
 
+
+/*
 /////////////////////////////////////////////////
 // Headers
 //////////////////
@@ -21,3 +32,4 @@ int main()
 
     return 0;
 }
+*/
