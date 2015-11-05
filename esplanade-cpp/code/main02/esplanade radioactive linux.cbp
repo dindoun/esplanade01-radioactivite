@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 				</Compiler>
 			</Target>
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-std=c++11" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -35,6 +37,7 @@
 			<Add option="-fexceptions" />
 			<Add option="-DSFML_STATIC" />
 			<Add directory="/usr/local/include/SFML" />
+			<Add directory="include" />
 		</Compiler>
 		<Linker>
 			<Add option="-m64" />
@@ -45,18 +48,13 @@
 			<Add library="sfml-system" />
 			<Add directory="/usr/local/lib" />
 		</Linker>
-		<Unit filename="include/Application.h" />
-		<Unit filename="include/Atome.h" />
-		<Unit filename="include/Config.h" />
-		<Unit filename="include/Ecran.h" />
-		<Unit filename="include/Esplanade.h" />
-		<Unit filename="include/Gestion_ecrans.h" />
-		<Unit filename="include/Isotope.h" />
-		<Unit filename="include/Mode2Desintegration.h" />
-		<Unit filename="include/ResourceMgr.h" />
-		<Unit filename="include/dalle.h" />
-		<Unit filename="include/ecrans/EcranPrincipal.h" />
-		<Unit filename="include/materiau.h" />
+		<Unit filename="include/CAtome.h" />
+		<Unit filename="include/CDalle.h" />
+		<Unit filename="include/CEsplanade.h" />
+		<Unit filename="include/CIsotope.h" />
+		<Unit filename="include/CMateriau.h" />
+		<Unit filename="include/CModeDeDesintegration.h" />
+		<Unit filename="include/CMolecule.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="media/img/nuage.jpg" />
 		<Unit filename="media/polices/arial.ttf" />
@@ -67,17 +65,13 @@
 		<Unit filename="media/polices/consolaz.ttf" />
 		<Unit filename="media/polices/webdings.ttf" />
 		<Unit filename="media/polices/wingding.ttf" />
-		<Unit filename="src/Application.cpp" />
-		<Unit filename="src/Atome.cpp" />
-		<Unit filename="src/Config.cpp" />
-		<Unit filename="src/Ecran.cpp" />
-		<Unit filename="src/Esplanade.cpp" />
-		<Unit filename="src/Gestion_ecrans.cpp" />
-		<Unit filename="src/Isotope.cpp" />
-		<Unit filename="src/Mode2Desintegration.cpp" />
-		<Unit filename="src/dalle.cpp" />
-		<Unit filename="src/ecrans/EcranPrincipal.cpp" />
-		<Unit filename="src/materiau.cpp" />
+		<Unit filename="src/CAtome.cpp" />
+		<Unit filename="src/CDalle.cpp" />
+		<Unit filename="src/CEsplanade.cpp" />
+		<Unit filename="src/CIsotope.cpp" />
+		<Unit filename="src/CMateriau.cpp" />
+		<Unit filename="src/CModeDeDesintegration.cpp" />
+		<Unit filename="src/CMolecule.cpp" />
 		<Extensions>
 			<envvars />
 			<code_completion />

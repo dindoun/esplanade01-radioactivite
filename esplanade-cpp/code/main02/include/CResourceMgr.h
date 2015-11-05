@@ -9,7 +9,7 @@
 #include <memory>
 #include <stdexcept>
 #include <SFML/Graphics.hpp>
-#include <SFML/audio.hpp>
+#include <SFML/Audio.hpp>
 
 namespace app
 {

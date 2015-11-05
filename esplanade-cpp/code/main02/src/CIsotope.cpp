@@ -1,25 +1,32 @@
-#include "Isotope.h"
+#include <CIsotope.h>
+#include <CModeDeDesintegration.h>
 
-namespace rad
-{
+using namespace rad;
+
 //std::map< Isotopes , Isotope* >  Isotope::m_isotopes();
-
+/*
 Isotope::Initialise ()
 {
+    m_ModesDeDesintegration
+
     m_isotopes.insert (Isotopes::U235,  new Isotope()   )
     m_isotopes[ Isotopes::U235_1 ].m_demi_vie =1.0E5 ;
     m_isotopes[ Isotopes::U235_1 ].m_type =TypeRadioactivite::Gamma;
     m_isotopes[ Isotopes::U235_1 ].m_MultHumain =1.0 ;
     m_isotopes[ Isotopes::U235_1 ].m_MultCompteurGeiger =1.0 ;
 
-new isotope U235;
+    new isotope U235;
 
 }
+*/
 
 
-
-Isotope::Isotope()
-{
+CIsotope::CIsotope()
+{   CModeDeDesintegration c;
+    m_ModesDeDesintegration.push_back (c);
+    CModeDeDesintegration cc;
+    cc.m_Energie =123456.0;
+    m_ModesDeDesintegration.push_back (cc);
 //    //ctor
 //
 //    double m_demi_vie;
@@ -32,9 +39,8 @@ Isotope::Isotope()
 
 }
 
-Isotope::~Isotope()
+CIsotope::~CIsotope()
 {
     //dtor
 }
 
-} // fin namspace

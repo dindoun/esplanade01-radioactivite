@@ -1,0 +1,173 @@
+# depslib dependency file v1.0
+1446734131 source:/home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/main.cpp
+	<SFML/Audio.hpp>
+	<SFML/Graphics.hpp>
+	<CModeDeDesintegration.h>
+	<CEsplanade.h>
+	<CDalle.h>
+	<CMateriau.h>
+	<CMolecule.h>
+	<CAtome.h>
+	<CIsotope.h>
+	<assert.h>
+	<cmath>
+	<complex.h>
+	<ctgmath>
+	<ctype.h>
+	<dirent.h>
+	<dlfcn.h>
+	<errno.h>
+	<fcntl.h>
+	<fenv.h>
+	<float.h>
+	<inttypes.h>
+	<iso646.h>
+	<jerror.h>
+	<jpeglib.h>
+	<libgen.h>
+	<libudev.h>
+	<limits.h>
+	<locale.h>
+	<math.h>
+	<setjmp.h>
+	<signal.h>
+	<stdarg.h>
+	<stdbool.h>
+	<stddef.h>
+	<stdint.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<tgmath.h>
+	<time.h>
+	<time.h>
+	<uchar.h>
+	<unistd.h>
+	<wchar.h>
+	<wctype.h>
+	<CIsotope.h>
+	<Application.h>
+
+1446594003 /home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/include/ModeDeDesintegration.h
+	<memory>
+
+1446070126 /home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/include/Application.h
+	<Ecran.h>
+	<Gestion_ecrans.h>
+	<SFML/Graphics.hpp>
+	<vector>
+
+1446070126 /home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/include/Ecran.h
+	<SFML/Graphics.hpp>
+
+1446070126 /home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/include/Gestion_ecrans.h
+	<Ecran.h>
+
+1446594183 source:/home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/src/ModeDeDesintegration.cpp
+	"ModeDeDesintegration.h"
+
+1446679440 /home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/include/CModeDeDesintegration.h
+	<memory>
+
+1446733151 /home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/include/CEsplanade.h
+	<SFML/Audio.hpp>
+	<SFML/Graphics.hpp>
+	<CEsplanade.h>
+	<CDalle.h>
+	<CMateriau.h>
+	<CMolecule.h>
+	<CAtome.h>
+	<CIsotope.h>
+	<assert.h>
+	<cmath>
+	<complex.h>
+	<ctgmath>
+	<ctype.h>
+	<dirent.h>
+	<dlfcn.h>
+	<errno.h>
+	<fcntl.h>
+	<fenv.h>
+	<float.h>
+	<inttypes.h>
+	<iso646.h>
+	<jerror.h>
+	<jpeglib.h>
+	<libgen.h>
+	<libudev.h>
+	<limits.h>
+	<locale.h>
+	<math.h>
+	<setjmp.h>
+	<signal.h>
+	<stdarg.h>
+	<stdbool.h>
+	<stddef.h>
+	<stdint.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<tgmath.h>
+	<time.h>
+	<time.h>
+	<uchar.h>
+	<unistd.h>
+	<wchar.h>
+	<wctype.h>
+
+1446733378 /home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/include/CDalle.h
+	<CMateriau.h>
+	<SFML/Audio.hpp>
+	<SFML/Graphics.hpp>
+
+1446741686 /home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/include/CMateriau.h
+	<CMolecule.h>
+	<SFML/Audio.hpp>
+	<SFML/Graphics.hpp>
+	<utility>
+
+1446693185 /home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/include/CMolecule.h
+	<CAtome.h>
+	<memory>
+	<vector>
+
+1446693713 /home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/include/CAtome.h
+	<CIsotope.h>
+	<memory>
+	<vector>
+
+1446693293 /home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/include/CIsotope.h
+	<CModeDeDesintegration.h>
+	<memory>
+	<vector>
+
+1446695769 source:/home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/src/CAtome.cpp
+	<CAtome.h>
+	<CModeDeDesintegration.h>
+
+1446733603 source:/home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/src/CDalle.cpp
+	<CDalle.h>
+
+1446733342 source:/home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/src/CEsplanade.cpp
+	<CEsplanade.h>
+	<SFML/Audio.hpp>
+	<SFML/Graphics.hpp>
+
+1446696650 source:/home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/src/CIsotope.cpp
+	<CIsotope.h>
+	<CModeDeDesintegration.h>
+
+1446741787 source:/home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/src/CMateriau.cpp
+	<CMateriau.h>
+	<CMolecule.h>
+	<iostream>
+	<fstream>
+
+1446695746 source:/home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/src/CModeDeDesintegration.cpp
+	<CModeDeDesintegration.h>
+
+1446695812 source:/home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/src/CMolecule.cpp
+	<CMolecule.h>
+	<memory>
+	<vector>
+
