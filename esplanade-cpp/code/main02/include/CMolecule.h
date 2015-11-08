@@ -20,6 +20,8 @@ class CMolecule
 {
     public:
         std::vector< CAtome> m_atomes;     ///<
+        char * m_nom;
+        float m_Proportion;
         CMolecule();
         virtual ~CMolecule();
 

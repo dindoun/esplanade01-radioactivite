@@ -14,9 +14,10 @@ enum CAtomes {
 
 CMolecule::CMolecule()
 {
-
+    m_nom="molécule";
+    m_Proportion=1.0;
     //std::vector< std::shared_ptr<CAtome>> m_atomes;     ///<
-CAtome a;
+    CAtome a;
     m_atomes.push_back (a);
 /*    struct Isotope{
         std::vector<Mode2Desintegration> m_Modes;

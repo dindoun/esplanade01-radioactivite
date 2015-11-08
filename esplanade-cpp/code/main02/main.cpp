@@ -94,12 +94,59 @@ int main()
     CDalle unedalle=esplanade.m_dalles[0];
     CMateriau unmateriau=unedalle.m_materiaux[0];
     CMolecule unemolecule=unmateriau.m_molecules[0];
+
+    /*
     CAtome unatome=unemolecule.m_atomes[0];//U
     CIsotope unisotoperadioactif=unatome.m_isotopes[0];//U23
-    //unisotopeNONradioactif=unatome.isotopes[1];//
     CModeDeDesintegration modeDeDesintegration00=unisotoperadioactif.m_ModesDeDesintegration[0];
     CModeDeDesintegration modeDeDesintegration01=unisotoperadioactif.m_ModesDeDesintegration[1];
-unmateriau.Creemap(1.0);
+    */
+
+    //unemolecule.m_atomes[0]=CAtome();
+
+
+    // GRANITE / 1-10ppm d URANIUM 12.5-125 bq/kg // 5-30 ppm Th 20-120 bq/kg // 4% K40 100bq/kg
+    unmateriau.m_nom="granite";
+
+    unemolecule.m_nom="granite";
+    unemolecule.m_Proportion=0.1;
+
+
+    CAtome unatome=unemolecule.m_atomes[0];
+        unatome.m_nom_atome=ATOMES::U;
+
+        unatome.m_isotopes[0].m_Numero_Atomique=234;
+            //CIsotope unisotoperadioactif=unatome.m_isotopes[0];
+            unatome.m_isotopes[0].m_Proportion=0.000056;
+
+            CModeDeDesintegration mode=unatome.m_isotopes[0].m_ModesDeDesintegration[0];
+                mode.m_Demi_Vie=245.5E3*( 365.25 * 24.0 * 3600.0 );
+
+
+        //unatome.m_isotopes[1].m_Numero_Atomique=235;
+        CIsotope unisotoperadioactif;
+
+
+        unisotoperadioactif.m_Numero_Atomique=235;
+            unisotoperadioactif.m_Proportion=0.007202;
+            unisotoperadioactif.m_ModesDeDesintegration[0].m_Demi_Vie=703.8E6*( 365.25 * 24.0 * 3600.0 );
+            unatome.m_isotopes.push_back(unisotoperadioactif);
+
+
+
+        unisotoperadioactif.m_Numero_Atomique=238;
+            unisotoperadioactif.m_Proportion=0.992742;
+            unisotoperadioactif.m_ModesDeDesintegration[0].m_Demi_Vie=4.4688E9*( 365.25 * 24.0 * 3600.0 );
+            unatome.m_isotopes.push_back(unisotoperadioactif);
+
+    for (auto iso : unatome.m_isotopes){
+        printf("%d \n",iso.m_Numero_Atomique);
+
+        }
+    //    m_isotopes
+
+
+    unmateriau.Creemap(1.0);
     //modeDeDesintegration00.affiche_mode();
     //modeDeDesintegration01.affiche_mode();
 /*

@@ -22,11 +22,12 @@ Isotope::Initialise ()
 
 
 CIsotope::CIsotope()
-{   CModeDeDesintegration c;
-    m_ModesDeDesintegration.push_back (c);
-    CModeDeDesintegration cc;
-    cc.m_Energie =123456.0;
-    m_ModesDeDesintegration.push_back (cc);
+{
+    m_Numero_Atomique=1;
+    m_Masse_Molaire=1.0;
+    m_Proportion=1.0;
+    CModeDeDesintegration c;
+    m_ModesDeDesintegration.push_back(c);
 //    //ctor
 //
 //    double m_demi_vie;

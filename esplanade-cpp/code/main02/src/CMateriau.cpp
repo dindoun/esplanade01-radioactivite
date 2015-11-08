@@ -10,6 +10,7 @@ using namespace std;
 CMateriau::CMateriau(sf::Vector3f position)
 {
     m_position=position;
+    m_nom="matériau";
 	//CMateriau m;
     // m_materiaux.push_back (m);
 	CMolecule mol;
@@ -31,11 +32,15 @@ Dot Product
 Cross Product
 */
 void CMateriau::Creemap(float z){
+    for (auto m : m_molecules)
+        for (auto a : m.m_atomes)
+            for (auto i : a.m_isotopes)
+                for (auto mod : i.m_ModesDeDesintegration)
+
     CModeDeDesintegration mode=m_molecules[0].m_atomes[0].m_isotopes[0].m_ModesDeDesintegration[0];
-    mode.affiche_mode();//m_map[11][11];
+    //mode.affiche_mode();//m_map[11][11];
     double valeur;
     for (int i=-5;i<6;i++){
-
         for (int j=-5;j<6;j++){
             //sf::Vector3f pos=sf::Vector3f (i*1.0+m_position.x,j*1.0+m_position.y,z+m_position.z);//position relative pr cube
             sf::Vector3f pos=sf::Vector3f (i*1.0,j*1.0,z);

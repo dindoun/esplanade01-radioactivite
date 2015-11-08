@@ -8,8 +8,11 @@ using namespace rad;
 
 class CIsotope
 {   public:
-        //std::vector< std::shared_ptr<CModeDeDesintegration>> m_ModesDeDesintegration;     ///<
-        std::vector<CModeDeDesintegration> m_ModesDeDesintegration;     ///<
+        //std::vector< std::shared_ptr<CModeDeDesintegration>> m_ModesDeDesintegration;
+        std::vector<CModeDeDesintegration> m_ModesDeDesintegration; /**<  les différents modes de désintégration de l'isotope */
+        int m_Numero_Atomique;/**< nombre de nucléons de l'isotope*/
+        float m_Masse_Molaire;/**< g/mol */
+        float m_Proportion;/**< proportion de cet isotope dans l'atome ( < 1.0 ) */
         CIsotope();
         virtual ~CIsotope();
 

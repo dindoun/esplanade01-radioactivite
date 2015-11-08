@@ -55,6 +55,8 @@
 		<Unit filename="include/CMateriau.h" />
 		<Unit filename="include/CModeDeDesintegration.h" />
 		<Unit filename="include/CMolecule.h" />
+		<Unit filename="include/CompteurGeiger.h" />
+		<Unit filename="include/fonctions.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="media/img/nuage.jpg" />
 		<Unit filename="media/polices/arial.ttf" />
@@ -72,6 +74,8 @@
 		<Unit filename="src/CMateriau.cpp" />
 		<Unit filename="src/CModeDeDesintegration.cpp" />
 		<Unit filename="src/CMolecule.cpp" />
+		<Unit filename="src/CompteurGeiger.cpp" />
+		<Unit filename="src/xml.cpp" />
 		<Extensions>
 			<envvars />
 			<code_completion />

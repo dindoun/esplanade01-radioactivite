@@ -24,7 +24,7 @@ public:
     double m_map[121];
     typedef std::tuple< double, double, double > test_tuple ;
     std::vector<test_tuple> mt_map;
-
+    char * m_nom;
 
 
 
