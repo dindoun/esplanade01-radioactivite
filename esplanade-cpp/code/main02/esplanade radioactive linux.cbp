@@ -49,13 +49,15 @@
 			<Add directory="/usr/local/lib" />
 		</Linker>
 		<Unit filename="include/CAtome.h" />
+		<Unit filename="include/CCompteurGeiger.h" />
 		<Unit filename="include/CDalle.h" />
 		<Unit filename="include/CEsplanade.h" />
 		<Unit filename="include/CIsotope.h" />
 		<Unit filename="include/CMateriau.h" />
 		<Unit filename="include/CModeDeDesintegration.h" />
 		<Unit filename="include/CMolecule.h" />
-		<Unit filename="include/CompteurGeiger.h" />
+		<Unit filename="include/CXml.h" />
+		<Unit filename="include/NamespaceRad.h" />
 		<Unit filename="include/fonctions.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="media/img/nuage.jpg" />
@@ -75,6 +77,7 @@
 		<Unit filename="src/CModeDeDesintegration.cpp" />
 		<Unit filename="src/CMolecule.cpp" />
 		<Unit filename="src/CompteurGeiger.cpp" />
+		<Unit filename="src/fonctions.cpp" />
 		<Unit filename="src/xml.cpp" />
 		<Extensions>
 			<envvars />

@@ -23,21 +23,11 @@ Isotope::Initialise ()
 
 CIsotope::CIsotope()
 {
-    m_Numero_Atomique=1;
-    m_Masse_Molaire=1.0;
-    m_Proportion=1.0;
-    CModeDeDesintegration c;
-    m_ModesDeDesintegration.push_back(c);
-//    //ctor
-//
-//    double m_demi_vie;
-//    TypeRadioactivite m_type;
-//    double m_energie;
-//    float m_MultHumain;///< passage du physique au biologique ( J -> Sievert )
-//    float m_MultCompteurGeiger;///<  erreur multiplicative sur  la mesure
-//
-
-
+    m_Nombre_Atomique=-1;
+    m_Masse_Molaire=-1.0;
+    m_Proportion=0.0;
+    m_Demi_Vie=-1.0;
+    //CModeDeDesintegration c;m_ModesDeDesintegration.push_back(c);
 }
 
 CIsotope::~CIsotope()

@@ -32,9 +32,9 @@ Example usage:
 
     */
 
+/*
 
-
-int mmmain(){
+int main(){
 
 std::string filepath = "/tmp/xmlparser/xmlparseur/br_isotopes.txt";
 std::ifstream fichier(filepath);
@@ -114,3 +114,4 @@ if ( fichier ) // ce test échoue si le fichier n'est pas ouvert
     }
 }
 
+*/

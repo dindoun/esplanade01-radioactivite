@@ -6,37 +6,6 @@
 #include <iostream>
 using namespace std;
 
-template<typename T>
-vector<T>
-split(const T & str, const T & delimiters) {
-    vector<T> v;
-    typename T::size_type start = 0;
-    auto pos = str.find_first_of(delimiters, start);
-    while(pos != T::npos) {
-        if(pos != start) // ignore empty tokens
-            v.emplace_back(str, start, pos - start);
-        start = pos + 1;
-        pos = str.find_first_of(delimiters, start);
-    }
-    if(start < str.length()) // ignore trailing delimiter
-        v.emplace_back(str, start, str.length() - start); // add what's left of the string
-    return v;
-}
-/*
-Example usage:
-    string str("Split me by whitespaces");
-    vector<string> v = split<string>("Hello, there; World", ";,");
-    vector<string> v = split<string>(str,";,");
-
-   for (auto s : v ) std::cout << s << std::endl;
-
-    */
-
-
-
-
-
-
 
 /** \brief fonction creneau
 *
@@ -47,12 +16,7 @@ Example usage:
 */
 
 
-float creneau(float x){
-    if (x<0 ) return 0;
-    if (x>=0) return 1;
-    }
-
-
+float creneau(float );
 
 
 /** \brief fonction intervalle
@@ -63,12 +27,7 @@ float creneau(float x){
  *
  */
 
-float intervalle(float x , float a, float b){
-    if ( (a<=b) &&  (x>=a)  && (x<=b) ) return 1;
-    else if ( (a>=b) &&  (x<=a)  && (x>=b) ) return 1;
-    else return 0;
-
-    }
+float intervalle(float  , float , float );
 
 
 

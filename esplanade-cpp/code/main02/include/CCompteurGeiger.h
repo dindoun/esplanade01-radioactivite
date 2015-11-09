@@ -2,18 +2,12 @@
 #define COMPTEURGEIGER_H_INCLUDED
 
 #include <fonctions.h>
+#include <NamespaceRad.h>
 
 
 using namespace rad;
 
-class CCompteurGeiger
-{
-    public:
-       CCompteurGeiger();
-       virtual ~CCompteurGeiger();
-       std::vector<CIntervalleEnergie> m_intervalles;/**< les intervalles de lecture des radiations */
 
-};
 
 class CIntervalleEnergie
 {
@@ -26,7 +20,17 @@ class CIntervalleEnergie
         string m_fonction; /**< fonction exprimant l'efficacité pour la lecture */
 
 };
-#endif // COMPTEURGEIGER_H_INCLUDED
+
+class CCompteurGeiger
+{
+    public:
+        string m_nom;
+        CCompteurGeiger(string);
+        virtual ~CCompteurGeiger();
+        std::vector<CIntervalleEnergie> m_intervalles;/**< les intervalles de lecture des radiations */
+        };
+
+
 /*
 radex RD 1503
 keV
@@ -37,3 +41,6 @@ gamma : 100 à 1250
 
 
 */
+
+
+#endif // COMPTEURGEIGER_H_INCLUDED

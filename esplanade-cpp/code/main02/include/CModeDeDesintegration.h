@@ -1,20 +1,24 @@
 #ifndef CMODEDEDESINTEGRATION_H
 #define CMODEDEDESINTEGRATION_H
+#include <NamespaceRad.h>
 
 #include <memory>
 
+/*
 namespace rad
 {
     enum TypeRadioactivite{
         Alpha,Electron,Positron,Gamma,X,Beta
     };
-}; // fin nemaspace
+};
+*/
 
 
 //typedef std::tuple< TypeRadioactivite & , ModeDeDesintegration* > t_ModeDeDesintegration ;
 using namespace rad;
 class CModeDeDesintegration
 {   public:
+        float m_Proportion;
         float m_Demi_Vie;/**< [s] = période = (t1/2) = ln(2)/RL*Na/M  */
         float m_Radiation_Level;/**< [Bq/g] RL=ln(2)/(t1/2)*Na/M  */
         TypeRadioactivite m_Type;/**< Alpha,Electron,Positron,Gamma,X */

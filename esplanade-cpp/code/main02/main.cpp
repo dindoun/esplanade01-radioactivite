@@ -76,12 +76,17 @@
 
 
 #include <CIsotope.h>
+#include <CCompteurGeiger.h>
 
 
 
 
 
+#include <string>
+#include <fstream>
 
+#include <vector>
+#include <iostream>
 
 
 
@@ -89,6 +94,14 @@
 using namespace rad;
 int main()
 {   //  creation de l'application.
+
+
+    CCompteurGeiger  CompteurGeiger("radex RD 1503");
+
+
+
+
+
 
     CEsplanade esplanade;
     CDalle unedalle=esplanade.m_dalles[0];
@@ -113,8 +126,12 @@ int main()
 
 
     CAtome unatome=unemolecule.m_atomes[0];
-        unatome.m_nom_atome=ATOMES::U;
+        unatome.m_nom_atome="U";
 
+        unatome.remplis_isotopes();
+
+
+/*
         unatome.m_isotopes[0].m_Numero_Atomique=234;
             //CIsotope unisotoperadioactif=unatome.m_isotopes[0];
             unatome.m_isotopes[0].m_Proportion=0.000056;
@@ -139,8 +156,11 @@ int main()
             unisotoperadioactif.m_ModesDeDesintegration[0].m_Demi_Vie=4.4688E9*( 365.25 * 24.0 * 3600.0 );
             unatome.m_isotopes.push_back(unisotoperadioactif);
 
+*/
+
+
     for (auto iso : unatome.m_isotopes){
-        printf("%d \n",iso.m_Numero_Atomique);
+        printf("%d \n",iso.m_Nombre_Atomique);
 
         }
     //    m_isotopes

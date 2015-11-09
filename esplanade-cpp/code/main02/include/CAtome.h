@@ -4,7 +4,9 @@
 
 #include <memory>
 #include <vector>
+#include <fonctions.h>
 
+/*
 namespace rad{
 enum ATOMES {VIDE,
     C,
@@ -12,6 +14,7 @@ enum ATOMES {VIDE,
     H
 };
 }
+*/
 
 
 using namespace rad;
@@ -22,7 +25,8 @@ class CAtome
 {   public:
         //std::vector< std::shared_ptr<CIsotope>> m_isotopes;     ///<
         std::vector<CIsotope> m_isotopes;/**< chaque atome possède des isotopes */
-        ATOMES m_nom_atome;
+        string m_nom_atome;
+        void remplis_isotopes();
         CAtome();
         virtual ~CAtome();
         /*

@@ -11,11 +11,12 @@ void CModeDeDesintegration::affiche_mode(){
     printf("1 Joule = %e Joules lus par le compteur geiger \n", m_Mult_Compteur_Geiger);
     };
 CModeDeDesintegration::CModeDeDesintegration(){
-    m_Demi_Vie=10.0;
+    m_Demi_Vie=-1.0;
     m_Type =TypeRadioactivite::Gamma;
     m_Energie =0.0;
     m_Mult_Humain =1.0 ;
     m_Mult_Compteur_Geiger =1.0 ;
+    m_Proportion=0.0;
     };
 
 
