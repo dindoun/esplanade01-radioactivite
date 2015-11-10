@@ -31,4 +31,7 @@ float intervalle(float  , float , float );
 
 
 
+void Affiche_Debug(string,bool);
+
+
 #endif // FONCTION_H

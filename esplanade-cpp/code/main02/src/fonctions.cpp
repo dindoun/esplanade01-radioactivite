@@ -52,3 +52,7 @@ float intervalle(float x , float a, float b){
 
     }
 
+
+void Affiche_Debug(string s,bool debug){
+    if (debug==true) std::cout << "debug:"<<s << std::endl;
+    };

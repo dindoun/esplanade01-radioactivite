@@ -7,7 +7,7 @@
 #include <vector>
 #include <iostream>
 #include <fonctions.h>
-
+#include <stdio.h>
 
 using namespace rad;
 using namespace std;
@@ -63,19 +63,26 @@ split(const T & str, const T & delimiters) {
  *
  */
 
-
 void CAtome::remplis_isotopes(){
+    bool debug=true;//
+    debug=false;
+
     std::string filepath ;
     filepath = "/home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/media/isotopes/br_isotopes.txt";
+    //filepath = "/home/bruno/Bureau/PROGRAMMATION/ESPLANADE MUSEE BEAUX ARTS-NUCLEAIRE/20151028-esplanade/esplanade-cpp/code/main02/media/isotopes/br_isotopes-U217.txt";
     //filepath = "media/isotopes/br_isotopes.txt";
     std::ifstream fichier(filepath);
-    CIsotope iso;
-    CModeDeDesintegration mode;
+    //CIsotope iso;
+    //CModeDeDesintegration mode;
+    //std::vector<CIsotope*> isotopes;
+    int IsotopeCourant=-1;
+    //std::vector<CModeDeDesintegration*> modes;
+    int ModeCourant=-1;
     if ( fichier ) // ce test échoue si le fichier n'est pas ouvert
         {
-            std::string ligne,atome,nucleons,dictref=""; // variable contenant chaque ligne lue
+            std::string ligne,atome,dictref=""; // variable contenant chaque ligne lue
             atome="";
-            int NombreAtomique;
+            int NombreAtomique,nucleons;
             vector<string> tmp,tmp0,v;
             string spin,unites;
             float proportion,masse,demivie,MomentMagnetique,errorValue,energie;
@@ -86,84 +93,142 @@ void CAtome::remplis_isotopes(){
                 {
                 // afficher la ligne à l'écran
 
+                Affiche_Debug("----------------------->"+ligne,debug);
+
                 v = split<string>(ligne,"/");
                 if (v[1]=="isotopeList"){
 
                     if ((v.size()==3)&&(v[2]!="isotope")){/**< première ligne de l'atome /cml/isotopeList/@id=H */
                         tmp = split<string>(v[2],"=");
                         atome=tmp[1];
-                        //std::cout << "atome" << atome << std::endl;
+                        Affiche_Debug("atome:" + atome ,debug);
                         }
+
+
+
+
+
                     if ((v.size()==4)&&(atome==m_nom_atome)){
+
                         tmp = split<string>(v[3],"=");
-                        if (tmp[0]=="@number"){/**< première ligne de l'isotope /cml/isotopeList/isotope/@id=H1 */
-                            if  (iso.m_Nombre_Atomique!=-1){ m_isotopes.push_back(iso);}//le dernier du fichier ne passe pas
-                            delete iso;
-                            delete mode;
-                            CIsotope iso;
-                            nucleons= tmp[1];
-                            //std::cout << "nucleons:" << nucleons << std::endl;
+
+
+                        if (tmp[0]=="@id"){/**< première ligne de l'isotope /cml/isotopeList/isotope/@id=H1 */
+                            //if  (m_isotopes[IsotopeCourant].m_Nombre_Atomique!=-1){ m_isotopes.push_back(iso);}//le dernier du fichier ne passe pas
+                            m_isotopes.push_back(CIsotope());/**< on crée un isotope */
+                            IsotopeCourant+=1;
+                            ModeCourant=-1;
+                            Affiche_Debug("\ton crée un isotope",debug);
                             }
-                        if ((tmp[0]=="scalar")&& (tmp[0].size()==2)){//vient apres sie=5 et dictref
-                            //std::cout << "dictref:" << dictref << std::endl;
+
+                        if (tmp[0]=="@number"){
+
+
+                            //delete iso;
+                            //delete mode;
+                            //CIsotope iso=&isotopes;
+                            nucleons= stoi(tmp[1]);
+                            m_isotopes[IsotopeCourant].m_Nombre_De_Masse=nucleons;
+                            Affiche_Debug("\t\tnucleons:"+nucleons ,debug);
+                            }
+
+                        if (tmp[0]=="@elementType"){
+                            //
+                            }
+
+                        if ((tmp[0]=="scalar")&& (tmp.size()==1)){
+                            //
+                            }
+
+                        //Affiche_Debug("0dictref:"+dictref,debug);
+
+                        if ((tmp[0]=="scalar")&& (tmp.size()==2)){//vient apres sie=5 et dictref
+                            Affiche_Debug("\t\t\t"+dictref+":scalar=",debug);
+                            Affiche_Debug("\t\t\t"+to_string(IsotopeCourant)+";"+to_string(ModeCourant),debug);
                             if (dictref=="atomicNumber"){NombreAtomique=stoi(tmp[1]);
-                                iso.m_Nombre_Atomique=NombreAtomique;  }
+                                //m_isotopes[IsotopeCourant].m_Nombre_Atomique=NombreAtomique;
+                                //Affiche_Debug("m_Nombre_Atomique:" + to_string(NombreAtomique) + ":"+to_string(m_isotopes[IsotopeCourant].m_Nombre_Atomique),debug);
+                                }
                             if (dictref=="alphaDecay"){energie=stof(tmp[1]);
-                                mode.m_Energie =energie;}
+                                Affiche_Debug("\t\t\t\ténergie:"+to_string(energie),debug);
+                                m_isotopes[IsotopeCourant].m_ModesDeDesintegration[ModeCourant].m_Energie =energie;}
                             if (dictref=="alphaDecayLikeliness"){proportion=0.01*stof(tmp[1]);//@units=bo:percentage
-                                mode.m_Proportion =proportion;
-                                iso.m_ModesDeDesintegration.push_back(mode);
-                                delete mode;}
+                                m_isotopes[IsotopeCourant].m_ModesDeDesintegration[ModeCourant].m_Proportion =proportion;
+                               // m_isotopes[IsotopeCourant].m_ModesDeDesintegration.push_back(mode);
+                                //delete mode;
+                                }
                             if (dictref=="betaminusDecay"){energie=stof(tmp[1]);
-                                mode.m_Energie =energie;}
+                                m_isotopes[IsotopeCourant].m_ModesDeDesintegration[ModeCourant].m_Energie =energie;}
                             if (dictref=="betaminusDecayLikeliness"){proportion=0.01*stof(tmp[1]);
-                                mode.m_Proportion =proportion;
-                                iso.m_ModesDeDesintegration.push_back(mode);
-                                delete mode;}
+                                m_isotopes[IsotopeCourant].m_ModesDeDesintegration[ModeCourant].m_Proportion =proportion;
+                               // m_isotopes[IsotopeCourant].m_ModesDeDesintegration.push_back(mode);
+                                //delete mode;
+								}
                             if (dictref=="betaplusDecay"){energie=stof(tmp[1]);
-                                mode.m_Energie =energie;}
+                                m_isotopes[IsotopeCourant].m_ModesDeDesintegration[ModeCourant].m_Energie =energie;}
                             if (dictref=="betaplusDecayLikeliness"){proportion=0.01*stof(tmp[1]);
-                                mode.m_Proportion =proportion;
-                                iso.m_ModesDeDesintegration.push_back(mode);
-                                delete mode;}
+                                m_isotopes[IsotopeCourant].m_ModesDeDesintegration[ModeCourant].m_Proportion =proportion;
+                               // m_isotopes[IsotopeCourant].m_ModesDeDesintegration.push_back(mode);
+                                //delete mode;
+								}
                             if (dictref=="ecDecay"){energie=stof(tmp[1]);
-                                mode.m_Energie =energie;}
+                                m_isotopes[IsotopeCourant].m_ModesDeDesintegration[ModeCourant].m_Energie =energie;}
                             if (dictref=="ecDecayLikeliness"){proportion=0.01*stof(tmp[1]);
-                                mode.m_Proportion =proportion;
-                                iso.m_ModesDeDesintegration.push_back(mode);
-                                delete mode;}
+                                m_isotopes[IsotopeCourant].m_ModesDeDesintegration[ModeCourant].m_Proportion =proportion;
+                               // m_isotopes[IsotopeCourant].m_ModesDeDesintegration.push_back(mode);
+                                //delete mode;
+								}
                             if (dictref=="exactMass"){masse=stof(tmp[1]);/**< (g/mol) */
-                                iso.m_Masse_Molaire=masse;}
+                                m_isotopes[IsotopeCourant].m_Masse_Molaire=masse;}
                             if (dictref=="halfLife"){demivie=stof(tmp[1]);/**< au moins un mode de désintégration */
-                                iso.m_Demi_Vie=iso.m_Demi_Vie*demivie;/**<(s)  unité * valeur */
-                                CModeDeDesintegration mode;//m_ModesDeDesintegration.push_back(c);
+                                m_isotopes[IsotopeCourant].m_Demi_Vie=m_isotopes[IsotopeCourant].m_Demi_Vie*demivie;/**<(s)  unité * valeur */
+                                //CModeDeDesintegration mode;//m_ModesDeDesintegration.push_back(c);
+
                                 }
                             if (dictref=="magneticMoment"){MomentMagnetique==stof(tmp[1]);}
                             if (dictref=="relativeAbundance"){proportion=0.01*stof(tmp[1]);
-                                iso.m_Proportion=proportion;}
+                                m_isotopes[IsotopeCourant].m_Proportion=proportion;}
                             if (dictref=="spin"){spin=tmp[1];}//5/2+
                             //std::cout << "machin:"<<tmp[1] << std::endl;
                             }
                         }//if (v.size()==4){
+
+
+
+
+
+
+
+
+
                     if ((v.size()==5)&&(atome==m_nom_atome)){
                         tmp0 = split<string>(v[4],"=");
                         if (tmp0[0]=="@dictRef"){
-                            //std::cout <<  "@dictRef" <<tmp0[1] << std::endl;
+                            Affiche_Debug("\t\t\t\t@dictRef:"+tmp0[1],debug);
                             tmp = split<string>(tmp0[1],":");
                             dictref=tmp[1]; // relativeAbundance exactMass spin magneticMoment atomicNumber
+                            Affiche_Debug("\t\t\t\tdictRef:"+dictref,debug);
+                            if (dictref=="halfLife"){
+                                m_isotopes[IsotopeCourant].m_ModesDeDesintegration.push_back(CModeDeDesintegration());
+                                ModeCourant+=1;
+                                Affiche_Debug("\t\t\t\t\tcréation d'un mode désintégration:"+to_string(ModeCourant),debug);
+                                }
                             }
-                        if (tmp0[0]=="@errorValue"){
+                        if (tmp0[0]=="@errorValue"){// on ne fait rien
                             //std::cout << "error"<< std::endl;
                             errorValue=stof(tmp0[1]);
-                            dictref='_';
+                            //dictref='_';
                             }
                         if (tmp0[0]=="@units"){
+                                //std::cout << "tmp1 : " << tmp0[1] << std::endl;
                             //std::cout << "unite" << std::endl;
                             tmp = split<string>(tmp0[1],":");
                             unites=tmp[1]; //s y
-                            if (unites=='y'){iso.m_Demi_Vie=31557600.0;}
-                            if (unites=='s'){iso.m_Demi_Vie=1.0;}
-                            if ((unites!='y')&&(unites!='s'){std::cout << "problème d'unités : " << unites << std::endl;}
+                            if (unites==(string)("y")){m_isotopes[IsotopeCourant].m_Demi_Vie=31557600.0;}
+                            if (unites==string("s")){m_isotopes[IsotopeCourant].m_Demi_Vie=1.0;}
+                            if (unites==string("percentage")){//
+                                ;}
+                            if ((unites!=string("y"))&&(unites!=string("s"))&&(unites!=string("percentage"))){std::cout << "problème d'unités : " << unites << std::endl;}
                             dictref='_';
                             }
                         }//if (v.size()==5){
@@ -175,3 +240,4 @@ void CAtome::remplis_isotopes(){
             }
         }
     };
+

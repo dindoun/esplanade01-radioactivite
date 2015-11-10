@@ -27,6 +27,7 @@ class CAtome
         std::vector<CIsotope> m_isotopes;/**< chaque atome possède des isotopes */
         string m_nom_atome;
         void remplis_isotopes();
+        void remplis_isotopes0();
         CAtome();
         virtual ~CAtome();
         /*

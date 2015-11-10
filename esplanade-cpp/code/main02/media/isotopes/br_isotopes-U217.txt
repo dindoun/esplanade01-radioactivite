@@ -1,0 +1,11 @@
+/cml/isotopeList
+/cml/isotopeList/@id=U
+/cml/isotopeList/isotope/@id=U217
+/cml/isotopeList/isotope/@number=217
+/cml/isotopeList/isotope/@elementType=U
+/cml/isotopeList/isotope/scalar/@dictRef=bo:exactMass
+/cml/isotopeList/isotope/scalar/@errorValue=90E-6
+/cml/isotopeList/isotope/scalar=217.02437
+/cml/isotopeList/isotope/scalar
+/cml/isotopeList/isotope/scalar/@dictRef=bo:atomicNumber
+/cml/isotopeList/isotope/scalar=92

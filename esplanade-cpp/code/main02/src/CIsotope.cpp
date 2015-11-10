@@ -23,7 +23,7 @@ Isotope::Initialise ()
 
 CIsotope::CIsotope()
 {
-    m_Nombre_Atomique=-1;
+    m_Nombre_De_Masse=-1;
     m_Masse_Molaire=-1.0;
     m_Proportion=0.0;
     m_Demi_Vie=-1.0;
